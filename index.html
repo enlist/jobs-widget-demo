@@ -4,29 +4,30 @@
     <meta charset='utf-8'>
   </head>
   <body>
-    <script type="text/javascript">
-    (function (d) {
-      function loadEnlist () {
-        window.ecfg = ecfg = {
-                js: "https://42.enlist.io/assets/boards.js",
-                css: "https://42.enlist.io/assets/boards.css",
-                username: "enlist"
-            }
+<script type="text/javascript" id="ecfgs">
+(function (d) {
+  function loadEnlist () {
+    window.ecfg = ecfg = {
+            js: "https://42.enlist.io/assets/boards.js",
+            css: "https://42.enlist.io/assets/boards.css",
+            username: "${username}"
+        }
 
-        var t = d.getElementsByTagName("script"), s = t[t.length - 1];
+    var s = d.getElementById("ecfgs");
 
-        var a = d.createElement("div");
-        a.classList.add("enlist-wrapper"), s.parentNode.insertBefore(a, s);
+    var a = d.createElement("div");
+    a.classList.add("enlist-wrapper"), s.parentNode.insertBefore(a, s);
 
-        var r = d.createElement("link");
-        r.href = ecfg.css, r.rel = "stylesheet", d.head.appendChild(r);
+    var r = d.createElement("link");
+    r.href = ecfg.css, r.rel = "stylesheet", d.head.appendChild(r);
 
-        var n = d.createElement("script");
-        n.src = ecfg.js, n.async = true, s.parentNode.insertBefore(n, s);
-      }
+    var n = d.createElement("script");
+    n.src = ecfg.js, n.async = true, s.parentNode.insertBefore(n, s);
+  }
 
-      window.addEventListener('load', loadEnlist, false)
-    })(document);
-    </script>
+  window.addEventListener('load', loadEnlist, false)
+})(document);
+</script>
+
   </body>
 </html>
