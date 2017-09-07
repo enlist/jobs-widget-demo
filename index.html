@@ -1,33 +1,83 @@
 <html>
   <head>
-    <title></title>
+    <title>enlist job's widget demo</title>
     <meta charset='utf-8'>
+
+    <style>
+      * {
+        margin: 0; padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif
+      }
+
+      header, footer {
+        padding: 1em;
+        text-align: center;
+      }
+
+      header {
+        border-bottom: 1px solid #eee;
+      }
+
+      footer {
+        border-top: 1px solid #eee;
+      }
+
+      header img {
+        max-width: 40px
+      }
+
+      footer a {
+        color: #4285f4;
+        font-size: 12px;
+        font-weight: 500;
+        text-decoration-skip: ink;
+        text-decoration: underline
+      }
+
+      .enlist-wrapper {
+        min-height: 600px;
+      }
+
+      .enlist-wrapper .jobs-list {
+        width: 50%
+      }
+
+    </style>
   </head>
   <body>
-<script type="text/javascript" id="ecfgs">
-(function (d) {
-  function loadEnlist () {
-    window.ecfg = ecfg = {
-            js: "https://42.enlist.io/assets/boards.js",
-            css: "https://42.enlist.io/assets/boards.css",
-            username: "enlist"
-        }
 
-    var s = d.getElementById("ecfgs");
+  <header>
+    <img src="logo.png" alt="Logo">
+  </header>
 
-    var a = d.createElement("div");
-    a.classList.add("enlist-wrapper"), s.parentNode.insertBefore(a, s);
+  <script type="text/javascript" id="ecfgs">
+  (function (d) {
+    function loadEnlist () {
+      window.ecfg = ecfg = {
+              js: "https://42.enlist.io/assets/boards.js",
+              css: "https://42.enlist.io/assets/boards.css",
+              username: "enlist"
+          }
 
-    var r = d.createElement("link");
-    r.href = ecfg.css, r.rel = "stylesheet", d.head.appendChild(r);
+      var s = d.getElementById("ecfgs");
 
-    var n = d.createElement("script");
-    n.src = ecfg.js, n.async = true, s.parentNode.insertBefore(n, s);
-  }
+      var a = d.createElement("div");
+      a.classList.add("enlist-wrapper"), s.parentNode.insertBefore(a, s);
 
-  window.addEventListener('load', loadEnlist, false)
-})(document);
-</script>
+      var r = d.createElement("link");
+      r.href = ecfg.css, r.rel = "stylesheet", d.head.appendChild(r);
 
+      var n = d.createElement("script");
+      n.src = ecfg.js, n.async = true, s.parentNode.insertBefore(n, s);
+    }
+
+    window.addEventListener('load', loadEnlist, false)
+  })(document);
+  </script>
+
+  <footer>
+    <a target="_blank" title="enlist" href="https://enlist.io">
+      Visit enlist &rarr;
+  </a></footer>
   </body>
 </html>
